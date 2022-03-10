@@ -1,14 +1,17 @@
-const FIRST_NUM = +prompt('Enter first number');
+const ENTER_DATA_1 = +prompt('Enter first number');
 
-if (isNaN(FIRST_NUM)) {
+if (isNaN(ENTER_DATA_1)) {
   console.log('Некорректный ввод!');
 } else {
-  const SECOND_NUM = +prompt('Enter second number');
+  const ENTER_DATA_2 = +prompt('Enter second number');
 
-  if (isNaN(SECOND_NUM)) {
-      console.log('Некорректный ввод!');
+  if (isNaN(ENTER_DATA_2)) {
+    console.log('Некорректный ввод!');
   } else {
-      console.log(`Ответ: ${FIRST_NUM + SECOND_NUM}, ${FIRST_NUM / SECOND_NUM}.`)
+    const summary = ENTER_DATA_1 + ENTER_DATA_2;
+    const divisor = ENTER_DATA_1 / ENTER_DATA_2;
+
+    console.log(`Ответ: ${summary}, ${divisor}.`);
   }
     
-}    
+}

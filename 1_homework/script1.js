@@ -1,9 +1,11 @@
-const FIRST_NUM = prompt('Enter first number');
-const SECOND_NUM = prompt('Enter second number');
+const ENTER_DATA_1 = prompt('Enter first number');
+const ENTER_DATA_2 = prompt('Enter second number');
+const IS_VALIDATE = isNaN(ENTER_DATA_1) || isNaN(ENTER_DATA_2) || ENTER_DATA_2 < 2 || ENTER_DATA_2 > 36;
 
-if (isNaN(FIRST_NUM) || isNaN(SECOND_NUM) || SECOND_NUM < 2 || SECOND_NUM > 36) {
+if (IS_VALIDATE) {
   console.log("Некорректный ввод!");
 } else {
-  const RESULT = parseInt(FIRST_NUM, 10).toString(SECOND_NUM);
-  console.log(RESULT);
+  const result = parseInt(ENTER_DATA_1, 10).toString(ENTER_DATA_2);
+  
+  console.log(result);
 }
