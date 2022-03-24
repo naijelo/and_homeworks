@@ -1,34 +1,27 @@
 function isString(arg) {
   return typeof arg === 'string';
 }
-function concatStrings(first_arg, separator = '') {
+
+function concatStrings(a, separator = '') {
   if (!isString(separator)) {
     separator = '';
   }
 
-  if (!isString(first_arg)) {
-    return console.log('');
-  }
-
-  return function (second_arg) {
-    if (!isString(second_arg)) {
-      return console.log(first_arg);
+  return function (b) {
+    if (isString(b)) {
+      return concatStrings(a + separator + b, separator);
     }
 
-    return function (third_arg) {
-      if (!isString(third_arg)) {
-        return console.log(`${first_arg}${separator}${second_arg}`);
-      }
-
-      return function() {
-        console.log(`${first_arg}${separator}${second_arg}${separator}${third_arg}`);
-      }
-    }
+    console.log(a);
   }
-}
+};
 
 class Calculator {
   constructor(first_data, second_data) {
+    if (arguments.length > 2) {
+      throw new Error('More than 2 arguments');
+    }
+    
     this.first_data = first_data;
     this.second_data = second_data;
 
