@@ -16,7 +16,7 @@ class Stack {
     if (this.size === 10) {
       throw new Error('Max size of stack');
     }
-    
+
     this.last = new Node(item, this.last);
     this.size += 1;
   }
@@ -74,3 +74,5 @@ class Stack {
     return fromIterableStack;
   }
 }
+
+module.exports = { Stack };
