@@ -1,0 +1,61 @@
+$bg_col: blue;
+$num_col: grey;
+$oper_col: orange;
+$text_col: white;
+$hover_eff: brightness(130%);
+$push_eff: brightness(80%);
+
+.calculator {
+    width: 400px;
+    height: 400px;
+    background-color: $bg_col;
+    color: $text_col;
+    margin: 30px auto;
+    border-radius: 20px;
+}
+.calculator__display {
+    height: 130px;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+    .display__text {
+        font-size: 3em;
+    }
+}
+.calculator__buttons {
+    display: grid;
+    grid-gap: 10px;
+    justify-items: center;
+    grid-template-areas: 
+    "seven eight nine sign del"
+    "four five six multi divide"
+    "one two three minus plus"
+    "reset zero point equal equal";
+}
+.btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $oper_col;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        filter: $hover_eff;
+    }
+    &:active {
+        filter: $push_eff;
+    }
+}
+
+.btn-grey {
+    background-color: $num_col;
+}
+.equal {
+    grid-area: equal;
+    width: 90%;
+    border-radius: 50px;
+}
