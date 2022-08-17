@@ -1,3 +1,3 @@
 # and_homeworks
 
-##Implementation of tasks from Andersen Training Course
+Implementation of tasks from Andersen Training Course
